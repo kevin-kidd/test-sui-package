@@ -3,7 +3,7 @@ name: Contract Development
 on:
    push:
     branches:
-      - main
+      - master
 
 jobs:
  test_project:
