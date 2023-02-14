@@ -24,16 +24,6 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v2
-      - name: Cache
-        uses: actions/cache@v3
-        with:
-          path: |
-            ~/.cargo/bin/
-            ~/.cargo/registry/index/
-            ~/.cargo/registry/cache/
-            ~/.cargo/git/db/
-            target/
-          key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
       - name: Install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -42,7 +32,7 @@ jobs:
           override: true
           components: rustfmt, clippy
       - name: Install Sui Move
-        run: cargo install --locked --git https://github.com/MystenLabs/sui.git --branch devnet sui
+        run: cargo install --locked --git https://github.com/MystenLabs/sui.git --branch devnet
       - name: Test Project
         run: sui move test
       - name: Build Project
