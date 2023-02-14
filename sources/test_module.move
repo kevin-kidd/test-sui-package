@@ -151,5 +151,4 @@ module test::test_module {
         };
         test_scenario::end(scenario_val);
     }
-
 }
