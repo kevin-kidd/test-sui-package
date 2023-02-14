@@ -32,7 +32,7 @@ jobs:
           override: true
           components: rustfmt, clippy
       - name: Install Sui Move
-        run: cargo install --locked --git https://github.com/MystenLabs/sui.git --branch devnet
+        run: cargo install --locked --git https://github.com/MystenLabs/sui.git --branch devnet sui
       - name: Test Project
         run: sui move test
       - name: Build Project
